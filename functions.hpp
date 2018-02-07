@@ -4,6 +4,6 @@
 #include "students.hpp"
 
 
-bool compare(const Student& first, const Student& second);
+bool compare(const User& first, const User& second);
 
 #endif

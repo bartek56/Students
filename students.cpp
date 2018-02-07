@@ -4,9 +4,14 @@
 
 using namespace std;
 
-void Students::addStudent(Student student)
+void Students::addStudent(Students student)
 {
     studentsList.push_back(student);
+}
+
+void Workers::addWorker(Workers worker)
+{
+    workersList.push_back(worker);
 }
 /*
 void Students::removeStudent(int index)
@@ -26,7 +31,7 @@ void Students::removeStudent(int index)
 
 void Students::removeStudent(int index)
 {
-    for (list<Student>::iterator iter=studentsList.begin(); iter != studentsList.end();++iter)
+    for (list<Students>::iterator iter=studentsList.begin(); iter != studentsList.end();++iter)
     {
         if(iter->index == index)
         {
@@ -48,9 +53,21 @@ void Students::SortStudentsIndex()
 void Students::ShowAllStudents()
 {
     int i=0;
-    for (list<Student>::iterator iter=studentsList.begin(); iter != studentsList.end();++iter)
+    for (list<User>::iterator iter=studentsList.begin(); iter != studentsList.end();++iter)
     {
-        cout << i << ": " << iter->index << " " << iter->name << " " << iter->surname << endl;
+        cout << i << ": " << iter->name << " " << iter->surname << " " << iter->index << " " <<
+        iter->pesel << " " << iter->sex << " " << iter-adress << endl;
+        i++;
+    }
+}
+
+void Workers::ShowAllWorkers()
+{
+    int i=0;
+    for (list<User>::iterator iter=workersList.begin(); iter != workersList.end();++iter)
+    {
+        cout << i << ": " << iter->name << " " << iter->surname << " " << iter->pesel << " " <<
+        iter->sex << " " << iter-adress << " " << iter->income << endl;
         i++;
     }
 }

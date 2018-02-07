@@ -5,5 +5,6 @@
 
 
 bool compare(const Users& first, const Users& second);
+bool compare2(const Users& first, const Users& second);
 
 #endif

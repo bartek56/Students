@@ -29,6 +29,12 @@ int main()
 
     users.showAllUsers();
 
+    users.findUserThroughtPesel(644545343);
+    users.findUserThroughtPesel(4684543);
+
+    users.findUserThroughtSurname("Nowak");
+    users.findUserThroughtSurname("Duda");
+
     return 0;
 }
 

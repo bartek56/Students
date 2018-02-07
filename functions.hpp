@@ -1,9 +1,9 @@
 #ifndef functions_hpp
 #define functions_hpp
 
-#include "students.hpp"
+#include "users.hpp"
 
 
-bool compare(const User& first, const User& second);
+bool compare(const Users& first, const Users& second);
 
 #endif

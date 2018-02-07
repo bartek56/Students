@@ -1,7 +1,7 @@
 #include <iostream>
 #include "functions.hpp"
 
-bool compare(const User& first, const User& second)
+bool compare(const Users& first, const Users& second)
 {
-    return (first.index < second.index);
+    return (first.pesel < second.pesel);
 }

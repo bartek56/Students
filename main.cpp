@@ -1,11 +1,26 @@
 #include <iostream>
 #include "students.hpp"
-
-
+#include "employees.hpp"
+#include "users.hpp"
 
 
 int main()
 {
+    Users users;
+
+    Students student1;
+    student1.index=1;
+    student1.name="Krzysztof";
+
+    Employess employess1;
+    employess1.name = "Zygmunt";
+    employess1.pesel = 456213545;
+
+    users.add(student1);
+    users.add(employess1);
+
+    users.showAllUsers();
+    /*
     Students students;
     Workers workers;
 
@@ -31,6 +46,7 @@ int main()
 
     //students.ShowAllStudents();
 
+    */
     return 0;
 }
 

@@ -9,25 +9,8 @@ int main()
 {
     /* task 1 */
     Users users;
-
-    Students student1;
-    student1.salaryIndex=1;
-    student1.name="Krzysztof";
-    student1.surname = "Kowalczyk";
-    student1.address = "Wroclaw";
-    student1.pesel=644545343;
-    student1.sex="man";
-    student1.isStudent=true;
-
-    Employess employess1;
-    employess1.salaryIndex = 4000,00;
-    employess1.name = "Jan";
-    employess1.surname = "Nowak";
-    employess1.address = "Warszawa";
-    employess1.pesel = 456213545;
-    employess1.sex="man";
-    employess1.isStudent=false;
-
+    Students student1(1,"Krzysztof","Kowalczyk","men","Wroclaw",1354135.0);
+    Employess employess1(561,"Jan", "Nowak", "men", "Warszawa", 4000.00);
     users.add(student1);
     users.add(employess1);
 

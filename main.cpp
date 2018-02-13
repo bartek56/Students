@@ -7,6 +7,7 @@ using namespace std;
 
 int main()
 {
+    /* task 1 */
     Users users;
 
     Students student1;
@@ -27,24 +28,27 @@ int main()
     employess1.sex="man";
     employess1.isStudent=false;
 
-
     users.add(student1);
     users.add(employess1);
 
-    cout << "All users: " << endl;
-    users.showAllUsers();
-    cout << "All students: " << endl;
-    users.showAllStudents();
-    cout << "All employees: " << endl;
-    users.showAllEmployees();
-
-    /*
+    /* task 2 */
     users.findUserThroughtPesel(644545343);
     users.findUserThroughtPesel(4684543);
 
     users.findUserThroughtSurname("Nowak");
     users.findUserThroughtSurname("Duda");
-*/
+
+    /* task 3 */
+    users.showAllUsers();
+    users.showAllStudents();
+    users.showAllEmployees();
+
+    /* task 4 */
+    users.sortUsersByPesel();
+    users.showAllUsers();
+    users.sortUsersBySurname();
+    users.showAllUsers();
+
     return 0;
 }
 

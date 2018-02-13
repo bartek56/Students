@@ -18,7 +18,9 @@ public:
     void add(Users user);
     void remove(int pesel);
     void showAllUsers();
-    void sortUsers();
+    void sortUsersByPesel();
+    void sortUsersBySalary();
+    void sortUsersBySurname();
     void findUserThroughtPesel (const int &pesel);
     void findUserThroughtSurname(const std::string &surname);
     std::list<Users> usersList;

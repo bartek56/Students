@@ -26,6 +26,7 @@ void Users::remove(int pesel)
 
 void Users::showAllUsers()
 {
+    cout << "All users: " << endl;
     int i=0;
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
@@ -37,6 +38,7 @@ void Users::showAllUsers()
 
 void Users::showAllStudents()
 {
+    cout << "All students: " << endl;
     int i=0;
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
@@ -51,6 +53,8 @@ void Users::showAllStudents()
 
 void Users::showAllEmployees()
 {
+    cout << "All employees: " << endl;
+
     int i=0;
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
@@ -60,14 +64,27 @@ void Users::showAllEmployees()
             iter->pesel << " " << iter->sex << endl;
             i++;
         }
-
     }
 }
-void Users::sortUsers()
+
+void Users::sortUsersByPesel()
 {
-    usersList.sort(compare);
+    usersList.sort([&](const Users& first, const Users& second)
+    { return (first.pesel < second.pesel); });
 }
-/*
+
+void Users::sortUsersBySalary()
+{
+    usersList.sort([&](const Users& first, const Users& second)
+    { return (first.salaryIndex < second.salaryIndex); });
+}
+
+void Users::sortUsersBySurname()
+{
+    usersList.sort([&](const Users& first, const Users& second)
+    { return (first.surname < second.surname); });
+}
+
 void Users::findUserThroughtPesel(const int &pesel)
 {
 
@@ -77,12 +94,13 @@ void Users::findUserThroughtPesel(const int &pesel)
 
     if(iter != std::end(usersList))
     {
+        cout << "found user: " << endl;
         cout << iter->name << " " << iter->surname << " " <<
-        iter->pesel << " " << iter->sex << endl;
+        iter->pesel << " " << iter->sex << " " << iter->salaryIndex << endl;
     }
     else
     {
-        cout << "nie znaleziono użytkownika o peselu: " << pesel << endl;
+        cout << "didn't find user with pesel: " << pesel << endl;
     }
 
 }
@@ -95,15 +113,13 @@ void Users::findUserThroughtSurname(const std::string  &surname)
 
     if(iter != std::end(usersList))
     {
+        cout << "found user: " << endl;
         cout << iter->name << " " << iter->surname << " " <<
-        iter->pesel << " " << iter->sex << endl;
+        iter->pesel << " " << iter->sex << " " << iter->salaryIndex << endl;
     }
     else
     {
-        cout << "nie znaleziono użytkownika o nazwisku " << surname << endl;
+        cout << "didn't find user with surname: " << surname << endl;
     }
 
-
 }
-
-*/

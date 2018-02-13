@@ -35,11 +35,39 @@ void Users::showAllUsers()
     }
 }
 
+void Users::showAllStudents()
+{
+    int i=0;
+    for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
+    {
+        if(iter->isStudent)
+        {
+            cout << i << ": " << iter->name << " " << iter->surname << " " <<
+            iter->pesel << " " << iter->sex << endl;
+            i++;
+        }
+    }
+}
+
+void Users::showAllEmployees()
+{
+    int i=0;
+    for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
+    {
+        if(!iter->isStudent)
+        {
+            cout << i << ": " << iter->name << " " << iter->surname << " " <<
+            iter->pesel << " " << iter->sex << endl;
+            i++;
+        }
+
+    }
+}
 void Users::sortUsers()
 {
     usersList.sort(compare);
 }
-
+/*
 void Users::findUserThroughtPesel(const int &pesel)
 {
 
@@ -57,19 +85,6 @@ void Users::findUserThroughtPesel(const int &pesel)
         cout << "nie znaleziono użytkownika o peselu: " << pesel << endl;
     }
 
-    /*
-    for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
-    {
-        if(iter->pesel == pesel)
-        {
-            cout << iter->name << " " << iter->surname << " " <<
-            iter->pesel << " " << iter->sex << endl;
-
-            return;
-        }
-    }
-    cout << "nie ma użytkownika o peselu " << pesel << endl;
-    */
 }
 
 void Users::findUserThroughtSurname(const std::string  &surname)
@@ -88,20 +103,7 @@ void Users::findUserThroughtSurname(const std::string  &surname)
         cout << "nie znaleziono użytkownika o nazwisku " << surname << endl;
     }
 
-    /*
-    for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
-    {
-        if(iter->surname == surname)
-        {
-            cout << iter->name << " " << iter->surname << " " <<
-            iter->pesel << " " << iter->sex << endl;
 
-            return;
-        }
-    }
-    */
-    //std::find(usersList.begin(),usersList.end(),compare(surname))
-
-    //cout << "nie ma użytkownika o nazwisku " << surname << endl;
 }
 
+*/

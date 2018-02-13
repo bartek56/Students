@@ -5,8 +5,7 @@
 
 class Employess : public Users
 {
-public:
-    double salary;
+
 };
 
 #endif

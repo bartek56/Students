@@ -5,8 +5,7 @@
 
 class Students : public Users
 {
-public:
-    int index;
+
 };
 
 

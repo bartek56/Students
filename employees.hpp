@@ -6,7 +6,7 @@
 class Employess : public Users
 {
 public:
-    Employess(int pesel, std::string name, std::string surname, std::string sex, std::string address,
+    Employess(int pesel, std::string name, std::string surname, Sex sex, std::string address,
              double salary);
 };
 

@@ -9,8 +9,8 @@ int main()
 {
     /* task 1 */
     Users users;
-    Students student1(1,"Krzysztof","Kowalczyk","men","Wroclaw",1354135.0);
-    Employess employess1(561,"Jan", "Nowak", "men", "Warszawa", 4000.00);
+    Students student1(644545343,"Krzysztof","Kowalczyk",male,"Wroclaw",13541);
+    Employess employess1(644545,"Jan", "Nowak", male, "Warszawa", 4000.00);
     users.add(student1);
     users.add(employess1);
 

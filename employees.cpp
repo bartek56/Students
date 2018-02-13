@@ -1,7 +1,7 @@
 #include <iostream>
 #include "employees.hpp"
 
-Employess::Employess(int pesel, std::string name, std::string surname, std::string sex, std::string address, double salary)
+Employess::Employess(int pesel, std::string name, std::string surname, Sex sex, std::string address, double salary)
 {
     this->pesel=pesel;
     this->name=name;

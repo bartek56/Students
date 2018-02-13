@@ -31,7 +31,7 @@ void Users::showAllUsers()
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
         cout << i << ": " << iter->name << " " << iter->surname << " " <<
-        iter->pesel << " " << iter->sex << endl;
+        iter->pesel << " " << showSex(iter->sex) << endl;
         i++;
     }
 }
@@ -45,7 +45,7 @@ void Users::showAllStudents()
         if(iter->isStudent)
         {
             cout << i << ": " << iter->name << " " << iter->surname << " " <<
-            iter->pesel << " " << iter->sex << endl;
+            iter->pesel << " " << showSex(iter->sex) << endl;
             i++;
         }
     }
@@ -61,7 +61,7 @@ void Users::showAllEmployees()
         if(!iter->isStudent)
         {
             cout << i << ": " << iter->name << " " << iter->surname << " " <<
-            iter->pesel << " " << iter->sex << endl;
+            iter->pesel << " " << showSex(iter->sex) << endl;
             i++;
         }
     }
@@ -94,9 +94,9 @@ void Users::findUserThroughtPesel(const int &pesel)
 
     if(iter != std::end(usersList))
     {
-        cout << "found user: " << endl;
+        cout << "found user with pesel: " << pesel << endl;
         cout << iter->name << " " << iter->surname << " " <<
-        iter->pesel << " " << iter->sex << " " << iter->salaryIndex << endl;
+        iter->pesel << " " << showSex(iter->sex) << " " << iter->salaryIndex << endl;
     }
     else
     {
@@ -113,13 +113,22 @@ void Users::findUserThroughtSurname(const std::string  &surname)
 
     if(iter != std::end(usersList))
     {
-        cout << "found user: " << endl;
+        cout << "found user: " << surname << endl;
         cout << iter->name << " " << iter->surname << " " <<
-        iter->pesel << " " << iter->sex << " " << iter->salaryIndex << endl;
+        iter->pesel << " " << showSex(iter->sex) << " " << iter->salaryIndex << endl;
     }
     else
     {
         cout << "didn't find user with surname: " << surname << endl;
     }
 
+}
+
+string Users::showSex(Sex sex)
+{
+    switch(sex)
+    {
+        case male: return "male";
+        case female: return "female";
+    }
 }

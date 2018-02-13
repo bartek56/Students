@@ -4,13 +4,19 @@
 #include <list>
 #include <string>
 
+enum Sex
+{
+  female,
+  male
+};
+
 class Users
 {
 public:
     int pesel;
     std::string name;
     std::string surname;
-    std::string sex;
+    Sex sex;
     std::string address;
     bool isStudent;
     double salaryIndex;
@@ -26,6 +32,9 @@ public:
     std::list<Users> usersList;
     void showAllStudents();
     void showAllEmployees();
+
+private:
+    std::string showSex(Sex sex);
 };
 
 #endif

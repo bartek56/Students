@@ -1,6 +1,5 @@
 #include <iostream>
 #include "users.hpp"
-#include "functions.hpp"
 #include <algorithm>
 
 using namespace std;
@@ -22,6 +21,22 @@ void Users::remove(int pesel)
         }
     }
     cout << "nie ma użytkownika o peselu " << pesel << endl;
+}
+
+void Users::generatePesel()
+{
+    for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
+    {
+        iter->RandomPesel();
+    }
+}
+
+void Users::generateIndex()
+{
+    for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
+    {
+        iter->RandomIndex();
+    }
 }
 
 void Users::showAllUsers()

@@ -31,6 +31,11 @@ int main()
     users.showAllUsers();
     users.sortUsersBySurname();
     users.showAllUsers();
+    
+    /* task 5 */
+    users.generatePesel();
+    users.generateIndex();
+    users.showAllUsers();
 
     return 0;
 }

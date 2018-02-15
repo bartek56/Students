@@ -27,7 +27,9 @@ void Users::generatePesel()
 {
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
-        iter->RandomPesel();
+        double random = RandomPesel();
+        cout << "random pesel: " << random << endl;
+        iter->pesel = random;
     }
 }
 
@@ -35,7 +37,9 @@ void Users::generateIndex()
 {
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
-        iter->RandomIndex();
+        double salaryIndex = RandomIndex();
+        cout << "random salaryIndex: " << salaryIndex << endl;
+        iter->salaryIndex = salaryIndex;
     }
 }
 
@@ -46,7 +50,7 @@ void Users::showAllUsers()
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
         cout << i << ": " << iter->name << " " << iter->surname << " " <<
-        iter->pesel << " " << showSex(iter->sex) << endl;
+        iter->pesel << " " << iter->salaryIndex << " " << showSex(iter->sex) << endl;
         i++;
     }
 }

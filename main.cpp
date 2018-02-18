@@ -2,6 +2,7 @@
 #include "students.hpp"
 #include "employees.hpp"
 #include "users.hpp"
+#include "pesel.hpp"
 
 using namespace std;
 
@@ -36,6 +37,13 @@ int main()
     users.generatePesel();
     users.generateIndex();
     users.showAllUsers();
+
+    /* task 9 */
+    Pesel pesel(1234567);
+    vector<int> peselVector = pesel.integerToArray();
+    for (auto const &element : peselVector)
+        cout << element << " " ;
+    cout << endl;
 
     return 0;
 }

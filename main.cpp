@@ -39,11 +39,12 @@ int main()
     users.showAllUsers();
 
     /* task 9 */
-    Pesel pesel(1234567);
-    vector<int> peselVector = pesel.integerToArray();
-    for (auto const &element : peselVector)
-        cout << element << " " ;
-    cout << endl;
+    Pesel pesel("8603145f341");
+    Pesel pesel2("93081015907");
+    Pesel pesel3("95121417312");
+    pesel.isValid();
+    pesel2.isValid();
+    pesel3.isValid();
 
     return 0;
 }

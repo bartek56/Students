@@ -16,11 +16,21 @@ void Users::remove(int pesel)
         if(iter->pesel == pesel)
         {
             iter = usersList.erase(iter);
-            cout << "Usunięto użytkownika o peselu: " << pesel << endl;
+            cout << "Removed user with national identification number: " << pesel << endl;
             return;
         }
     }
-    cout << "nie ma użytkownika o peselu " << pesel << endl;
+    cout << "not exists user with national identification number: " << pesel << endl;
+}
+
+int Users::RandomIndex()
+{
+	return (std::rand()%100000);
+}
+
+int Users::RandomPesel()
+{
+	return (std::rand()%100000000000);
 }
 
 void Users::generatePesel()
@@ -28,7 +38,7 @@ void Users::generatePesel()
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
         double random = RandomPesel();
-        cout << "random pesel: " << random << endl;
+        cout << "random national identification number: " << random << endl;
         iter->pesel = random;
     }
 }
@@ -104,7 +114,7 @@ void Users::sortUsersBySurname()
     { return (first.surname < second.surname); });
 }
 
-void Users::findUserThroughtPesel(const int &pesel)
+void Users::findUserThroughPesel(const int &pesel)
 {
 
     auto iter = std::find_if(usersList.begin(), usersList.end(), [&](const Users& user)
@@ -113,18 +123,18 @@ void Users::findUserThroughtPesel(const int &pesel)
 
     if(iter != std::end(usersList))
     {
-        cout << "found user with pesel: " << pesel << endl;
+        cout << "found user with national identification number: " << pesel << endl;
         cout << iter->name << " " << iter->surname << " " <<
         iter->pesel << " " << showSex(iter->sex) << " " << iter->salaryIndex << endl;
     }
     else
     {
-        cout << "didn't find user with pesel: " << pesel << endl;
+        cout << "didn't find user with national identification number: " << pesel << endl;
     }
 
 }
 
-void Users::findUserThroughtSurname(const std::string  &surname)
+void Users::findUserThroughSurname(const std::string  &surname)
 {
     auto iter = std::find_if(usersList.begin(), usersList.end(), [&](const Users& user)
         { return user.surname == surname; });

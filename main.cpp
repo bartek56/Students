@@ -16,17 +16,17 @@ int main()
     users.add(employess1);
 
     /* task 2 */
-    users.findUserThroughtPesel(644545343);
-    users.findUserThroughtPesel(4684543);
+    users.findUserThroughPesel(644545343);
+    users.findUserThroughPesel(4684543);
 
-    users.findUserThroughtSurname("Nowak");
-    users.findUserThroughtSurname("Duda");
+    users.findUserThroughSurname("Nowak");
+    users.findUserThroughSurname("Duda");
 
     /* task 3 */
     users.showAllUsers();
     users.showAllStudents();
     users.showAllEmployees();
-
+	
     /* task 4 */
     users.sortUsersByPesel();
     users.showAllUsers();

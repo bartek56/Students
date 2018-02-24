@@ -20,8 +20,8 @@ public:
     std::string address;
     bool isStudent;
     double salaryIndex;
-    int RandomPesel () {return (std::rand()%1000000000);};
-    int RandomIndex () {return (std::rand()%100000);};
+    int RandomPesel ();
+    int RandomIndex ();
 
     void add(Users user);
     void remove(int pesel);
@@ -29,8 +29,8 @@ public:
     void sortUsersByPesel();
     void sortUsersBySalary();
     void sortUsersBySurname();
-    void findUserThroughtPesel (const int &pesel);
-    void findUserThroughtSurname(const std::string &surname);
+    void findUserThroughPesel (const int &pesel);
+    void findUserThroughSurname(const std::string &surname);
     std::list<Users> usersList;
     void showAllStudents();
     void showAllEmployees();

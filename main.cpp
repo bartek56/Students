@@ -33,9 +33,11 @@ int main()
     users.showAllUsers();
     
     /* task 5 */
+    users.generatePesel(delete *iter->pesel);
     users.generatePesel();
     users.generateIndex();
     users.showAllUsers();
+    delete iter->pesel;
 
     return 0;
 }

@@ -27,7 +27,7 @@ void Users::generatePesel()
 {
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
-        iter->RandomPesel();
+        iter->pesel = RandomPesel();
     }
 }
 
@@ -35,7 +35,7 @@ void Users::generateIndex()
 {
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
-        iter->RandomIndex();
+        iter->pesel = RandomIndex();
     }
 }
 

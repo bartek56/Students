@@ -4,11 +4,10 @@
 #include <list>
 #include <string>
 
-enum Sex
-{
-  female,
-  male
-};
+#include "person.hpp"
+#include "students.hpp"
+#include "employees.hpp"
+#include <memory>
 
 class Users
 {
@@ -23,15 +22,15 @@ public:
     int RandomPesel ();
     int RandomIndex ();
 
-    void add(Users user);
+    void add(Person* user);
     void remove(int pesel);
     void showAllUsers();
     void sortUsersByPesel();
     void sortUsersBySalary();
     void sortUsersBySurname();
-    void findUserThroughPesel (const int &pesel);
-    void findUserThroughSurname(const std::string &surname);
-    std::list<Users> usersList;
+    Person* findUserThroughPesel (const int &pesel);
+    Person* findUserThroughSurname(const std::string &surname);
+    std::list<Person*> usersList;
     void showAllStudents();
     void showAllEmployees();
     void generatePesel();

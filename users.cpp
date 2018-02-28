@@ -5,17 +5,16 @@
 
 using namespace std;
 
-void Users::add(Person* user)
+void Users::add(shared_ptr<Person>  user)
 {
-    usersList.push_front(user);
+    usersList.push_front(move(user));
 }
 
 void Users::showAllUsers()
 {
     cout << "All users: " << endl;
-    int i=0;
 
-    for (Person * person : usersList)
+    for (shared_ptr<Person> person : usersList)
     {
         person->Show();
     }
@@ -24,9 +23,9 @@ void Users::showAllUsers()
 
 void Users::remove(int pesel)
 {
-    for (list<Person*>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
+    for (list<shared_ptr<Person> >::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
-        Person* person = *iter;
+        shared_ptr<Person>  person = *iter;
         if(person->pesel == pesel)
         {
             usersList.erase(iter);
@@ -39,13 +38,13 @@ void Users::remove(int pesel)
 
 void Users::sortUsersByPesel()
 {
-    usersList.sort([&](Person* first, Person* second)
+    usersList.sort([&](shared_ptr<Person>  first, shared_ptr<Person>  second)
     { return (first->pesel < second->pesel); });
 }
 
 void Users::sortUsersBySurname()
 {
-    usersList.sort([&](Person* first, Person* second)
+    usersList.sort([&](shared_ptr<Person>  first, shared_ptr<Person>  second)
     { return (first->surname < second->surname); });
 }
 
@@ -83,46 +82,54 @@ void Users::generateIndex()
 */
 
 
-Person* Users::findUserThroughPesel(const int &pesel)
+ shared_ptr<Person> Users::findUserThroughPesel(const int &pesel)
 {
 
-    auto iter = std::find_if(usersList.begin(), usersList.end(), [&](Person* user)
+    auto iter = std::find_if(usersList.begin(), usersList.end(), [&](shared_ptr<Person>  user)
         { return user->pesel == pesel; });
 
+
+    shared_ptr<Person>  person;
 
     if(iter != std::end(usersList))
     {
 
         cout << "found user with national identification number: " << pesel << endl;
 
-        Person * person = *iter;
-
-        return person;
-
+        person = *iter;
     }
     else
     {
         cout << "didn't find user with national identification number: " << pesel << endl;
     }
 
+    return person;
 }
 
-Person* Users::findUserThroughSurname(const std::string  &surname)
+
+shared_ptr<Person> Users::findUserThroughSurname(const string  &surname)
 {
-    auto iter = std::find_if(usersList.begin(), usersList.end(), [&](Person* user)
-        { return user->surname == surname; });
 
+    auto iter = std::find_if(usersList.begin(), usersList.end(), [&](shared_ptr<Person> user)
+        { //return user->surname.compare(surname);
+            return user->surname == surname;
+});
 
+    shared_ptr<Person> person;
     if(iter != std::end(usersList))
     {
         cout << "found user with surname: " << surname << endl;
-        Person* person = *iter;
+
+        person = *iter;
         return person;
     }
+
     else
     {
         cout << "didn't find user with surname: " << surname << endl;
     }
+
+    return person;
 
 }
 

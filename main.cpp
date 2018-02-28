@@ -10,34 +10,34 @@ int main()
 {
     /* task 1 */
     Users users;
-    Students student1(644545343,"Krzysztof","Kowalczyk",male,"Wroclaw",13541);
-    Employess employess1(644545,"Jan", "Nowak", male, "Warszawa", 4000.00);
-    users.add(&student1);
-    users.add(&employess1);
+    auto student1 = make_shared<Students>(644545343,"Krzysztof","Kowalczyk",male,"Wroclaw",13541);
+    auto employee1 = make_shared<Employess>(644545,"Jan", "Nowak", male, "Warszawa", 4000.00);
+    users.add(move(student1));
+    users.add(move(employee1));
 
     users.showAllUsers();
-    //users.remove(644545343);
+    users.remove(644545343);
     users.showAllUsers();
 
 
     /* task 2 */
-    users.findUserThroughPesel(644545343);
-    users.findUserThroughPesel(4684543);
+    //users.findUserThroughPesel(644545343);
+    //users.findUserThroughPesel(4684543);
+
+    users.showAllUsers();
 
     users.findUserThroughSurname("Nowak");
     users.findUserThroughSurname("Duda");
 
-    /* task 3 */
-    //users.showAllUsers();
-//    users.showAllStudents();
-//    users.showAllEmployees();
+
 	
     /* task 4 */
+    /*
     users.sortUsersByPesel();
     users.showAllUsers();
     users.sortUsersBySurname();
     users.showAllUsers();
-    
+    */
     /* task 5 */
 //    users.generatePesel();
 //    users.generateIndex();

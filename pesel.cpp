@@ -137,7 +137,9 @@ bool Pesel::checkDay()
 
 bool Pesel::leapYear(int year)
 {
-    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+    if (year % 4 == 0 && year % 100 != 0)
+        return true;
+    if(year % 400 == 0)
         return true;
     else
         return false;
@@ -170,7 +172,7 @@ Pesel::Pesel(string peselString)
     }
     else
     {
-        for (int i = 0; i < peselString.length(); ++i)
+        for (unsigned int i = 0; i < peselString.length(); ++i)
         {
             if(!isdigit(peselString[i]))
             {

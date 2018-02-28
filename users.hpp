@@ -22,15 +22,15 @@ public:
     int RandomPesel ();
     int RandomIndex ();
 
-    void add(Person* user);
+    void add(shared_ptr<Person> user);
     void remove(int pesel);
     void showAllUsers();
     void sortUsersByPesel();
     void sortUsersBySalary();
     void sortUsersBySurname();
-    Person* findUserThroughPesel (const int &pesel);
-    Person* findUserThroughSurname(const std::string &surname);
-    std::list<Person*> usersList;
+    shared_ptr<Person> findUserThroughPesel (const int &pesel);
+    shared_ptr<Person> findUserThroughSurname(const std::string &surname);
+    std::list<shared_ptr<Person>> usersList;
     void showAllStudents();
     void showAllEmployees();
     void generatePesel();

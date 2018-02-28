@@ -19,6 +19,7 @@ string Person::showSex(Sex sex)
     {
         case male: return "male";
         case female: return "female";
+    default: return "";
     }
 }
 

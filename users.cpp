@@ -27,7 +27,8 @@ void Users::generatePesel()
 {
     for (list<Users>::iterator iter=usersList.begin(); iter != usersList.end();++iter)
     {
-        iter->pesel = RandomPesel();
+        generate_n(back_inserter(d), 11, [](){ return rand(); });
+        //iter->pesel = RandomPesel();
     }
 }
 

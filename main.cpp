@@ -10,8 +10,8 @@ int main()
 {
     /* task 1 */
     Users users;
-    auto student1 = make_shared<Students>(644545343,"Krzysztof","Kowalczyk",male,"Wroclaw",13541);
-    auto employee1 = make_shared<Employess>(644545,"Jan", "Nowak", male, "Warszawa", 4000.00);
+    auto student1 = make_shared<Students>(644545343, "Krzysztof", "Kowalczyk", male, "Wroclaw", 13541);
+    auto employee1 = make_shared<Employess>(644545, "Jan", "Nowak", male, "Warszawa", 4000.00);
     users.add(move(student1));
     users.add(move(employee1));
 
@@ -26,8 +26,8 @@ int main()
 
     users.showAllUsers();
 
-    users.findUserThroughSurname("Nowak");
-    users.findUserThroughSurname("Duda");
+    shared_ptr<Person> person = users.findUserThroughSurname("Nowak");
+    shared_ptr<Person> person2 = users.findUserThroughSurname("Duda");
 
 
 	

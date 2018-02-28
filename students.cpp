@@ -1,15 +1,16 @@
 #include <iostream>
 #include "students.hpp"
 
-using namespace std;
 
-Students::Students(int pesel, string name, string surname, Sex sex, string address, double index)
+Students::Students(int pesel, std::string name, std::string surname, Sex sex, std::string address, int index):
+    Person(pesel,name,surname,sex,address)
 {
-    this->pesel=pesel;
-    this->name=name;
-    this->surname = surname;
-    this->sex=sex;
-    this->address = address;
-    this->salaryIndex=index;
-    this->isStudent=true;
+    this->index=index;
+}
+
+void Students::Show()
+{
+    std::cout << "Student: " << index;
+    Person::Show();
+
 }

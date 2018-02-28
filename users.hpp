@@ -3,16 +3,18 @@
 
 #include <list>
 #include <string>
+#include <cstdlib>
+#include <deque>
 
-enum Sex
-{
-  female,
-  male
-};
+#include "person.hpp"
+#include "students.hpp"
+#include "employees.hpp"
+#include <memory>
 
 class Users
 {
 public:
+    deque<double> d{};
     int pesel;
     std::string name;
     std::string surname;
@@ -20,18 +22,18 @@ public:
     std::string address;
     bool isStudent;
     double salaryIndex;
-    int RandomPesel () {return (std::rand()%1000000000);};
-    int RandomIndex () {return (std::rand()%100000);};
+    int RandomPesel ();
+    int RandomIndex ();
 
-    void add(Users user);
+    void add(shared_ptr<Person> user);
     void remove(int pesel);
     void showAllUsers();
     void sortUsersByPesel();
     void sortUsersBySalary();
     void sortUsersBySurname();
-    void findUserThroughtPesel (const int &pesel);
-    void findUserThroughtSurname(const std::string &surname);
-    std::list<Users> usersList;
+    shared_ptr<Person> findUserThroughPesel (const int &pesel);
+    shared_ptr<Person> findUserThroughSurname(const std::string &surname);
+    std::list<shared_ptr<Person>> usersList;
     void showAllStudents();
     void showAllEmployees();
     void generatePesel();

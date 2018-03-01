@@ -96,7 +96,7 @@ bool Pesel::checkSum()
 bool Pesel::checkMonth()
 {
     int month = getBirthMonth();
-    if (month > 0 && month < 13)
+    if (month >= 1 && month <= 12)
     {
         return true;
     }

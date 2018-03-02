@@ -191,14 +191,16 @@ Pesel::Pesel(string peselString)
     }
 }
 
-void Pesel::isValid()
+bool Pesel::getValid()
 {
     if (valid)
     {
         cout << "PESEL " << this->peselString << " jest prawidłowy!" << endl;
+        return this->valid;
     }
     else
     {
         cout << "PESEL " << this->peselString << " jest nieprawidłowy!" << endl;
+        return this->valid;
     }
 }

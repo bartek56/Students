@@ -39,25 +39,19 @@ int main()
     users.showAllUsers();
     */
     /* task 5 */
-<<<<<<< HEAD
-    users.generatePesel(delete *iter->pesel);
-    users.generatePesel();
-    users.generateIndex();
-    users.showAllUsers();
-    delete iter->pesel;
-=======
+
 //    users.generatePesel();
 //    users.generateIndex();
 //    users.showAllUsers();
 
     /* task 9 */
-//    Pesel pesel("8603145f341");
-//    Pesel pesel2("93081015907");
-//    Pesel pesel3("95121417312");
-//    pesel.isValid();
-//    pesel2.isValid();
-//    pesel3.isValid();
->>>>>>> 98708a9832eeadb1023837456cfd9795f283d582
+    Pesel pesel("8603145f341");
+    Pesel pesel2("93081015907");
+    Pesel pesel3("95121417312");
+
+    cout << pesel.getValid() << endl;
+    cout << pesel2.getValid() << endl;
+    cout << pesel3.getValid() << endl;
 
     return 0;
 }

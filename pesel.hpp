@@ -23,7 +23,7 @@ private:
 
 public:
     Pesel(std::string peselString);
-    void isValid();
+    bool getValid();
 };
 
 #endif

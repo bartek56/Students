@@ -204,3 +204,10 @@ bool Pesel::getValid()
         return this->valid;
     }
 }
+
+long long Pesel::getLongLongPesel()
+{
+    long long ll = stoll(this->peselString);
+
+    return ll;
+}

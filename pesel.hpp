@@ -24,6 +24,7 @@ private:
 public:
     Pesel(std::string peselString);
     bool getValid();
+    long long getLongLongPesel();
 };
 
 #endif

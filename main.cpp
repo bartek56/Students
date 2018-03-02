@@ -53,6 +53,9 @@ int main()
     cout << pesel2.getValid() << endl;
     cout << pesel3.getValid() << endl;
 
+    cout << pesel.getLongLongPesel() << endl;
+    cout << pesel2.getLongLongPesel() << endl;
+    cout << pesel3.getLongLongPesel() << endl;
+
     return 0;
 }
-
